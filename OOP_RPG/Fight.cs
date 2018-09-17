@@ -18,10 +18,10 @@ namespace OOP_RPG
             this.hero = hero;
             this.game = game;
 
-            this.AddMonster("Superman", 9, 8, 20 ,5);
-            this.AddMonster("niuzhanshi", 11, 10, 10 , 5);
-            this.AddMonster("Ironman", 3, 6, 16, 5);
-            this.AddMonster("USAcaptain", 1, 8, 10, 5);
+            this.AddMonster("Superman", 9, 8, 20 ,22 , 10);
+            this.AddMonster("niuzhanshi", 11, 10, 10 , 20, 8);
+            this.AddMonster("Ironman", 3, 6, 16, 17, 9);
+            this.AddMonster("USAcaptain", 1, 8, 10, 100,7);
 
 
             //var the four monster attack attribute
@@ -39,9 +39,9 @@ namespace OOP_RPG
 
         }
 
-        public void AddMonster(string name, int strength, int defense, int hp, int gold)
+        public void AddMonster(string name, int strength, int defense, int hp, int gold , int speed)
         {
-            var monster = new Monster(name, strength, defense, hp , gold);
+            var monster = new Monster(name, strength, defense, hp);
             this.Monsters.Add(monster);
         }
 
@@ -50,7 +50,7 @@ namespace OOP_RPG
 
 
             Console.WriteLine("You've encountered a " + monster.Name + "! " + monster.Strength + " Strength/" + monster.Defense + " Defense/" +
-            monster.CurrentHP + " HP" +   "Gold/" + monster.Gold+  " What will you do?");
+            monster.CurrentHP + " HP/" +   "Gold/" + monster.Gold+  " What will you do?");
             Console.WriteLine("1. Fight");
             var input = Console.ReadLine();
             if (input == "1")
